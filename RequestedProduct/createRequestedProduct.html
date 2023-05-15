@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/Product/createProduct.css">
+    <link rel="stylesheet" href="/Buyer/buyerRegistration.css">
+    <link rel="stylesheet" href="/Admin/adminDashboard.css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div class="head">
+            <div class="logo"><img src="/agro logo.png" alt="wazobia" width="45rem" height="45rem"></div>
+            <div class="brand">Wazobia Agro-Express</div>
+            <div><i class="fa-solid fa-user-vneck"></i></div>
+        </div>
+
+        <form id="requested-product">
+            <div class="form-container">
+             <div class="form-head"><span class="reg-form">Farm Product</span></div>
+             
+                   <h5 id="err-message" style="color: red; text-align: center;"></h5>
+             
+             <div class="form-body">
+         
+                  <div id="product-form">
+                 <p id="product-form-input"> Product Information<br><br>You want to buy <input name = "ProductName" class="productName" id="product-form-input-input" type="text" placeholder="Product name" readonly required/>, at the rate of ₦<input class="price" name = "Price" id="product-form-input-input" type="number" placeholder=" e.g 200"  min="1" readonly required/> per <input class="measurement" id="product-form-input-input" type="text" placeholder=" e.g Basket" readonly required/>, and the quantity you are requsting is (in accordance withe Measurement mentioned above)<input name = "Quantity" class="quantity" id="product-form-input-input" type="number"  min="1" placeholder="e.g 30" required/></p>
+               </div>
+                
+                
+             </div>
+             <div class="form-bottom"> <input id="btn" class="submit-form" type="submit"> </div>
+             </div>
+             </form>
+    </div>
+    
+   <script src="/RequestedProduct/createRequestedProduct.js"></script>
+</body>
+</html>

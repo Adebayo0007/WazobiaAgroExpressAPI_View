@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/Product/createProduct.css">
+    <link rel="stylesheet" href="/Buyer/buyerRegistration.css">
+    <link rel="stylesheet" href="/Admin/adminDashboard.css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div class="head">
+            <div class="logo"><img src="/agro logo.png" alt="wazobia" width="45rem" height="45rem"></div>
+            <div class="brand">Wazobia Agro-Express</div>
+            <div><i class="fa-solid fa-user-vneck"></i></div>
+        </div>
+
+        <form id="edit-product" enctype="multipart/form-data">
+            <div class="form-container">
+             <div class="form-head"><span class="reg-form">Edit Farm Product</span></div>
+             
+                   <h5 id="err-message" style="color: red; text-align: center;"></h5>
+             
+             <div class="form-body">
+         
+                  <div id="product-form">
+                 <p id="product-form-input"> Product Information<br><br>The name of my product is <input name = "ProductName" class="productName" id="product-form-input-input" type="text" placeholder="Product name" required/>, the price is ₦<input class="price" name = "Price" id="product-form-input-input" type="number" placeholder=" e.g 200"  min="1" required/> per <select class="measurement" name = "Measurement" id="product-form-input-input" placeholder="Measurement" >
+                    <option selected disabled>--Measurement--</option>
+                    <option >Basket</option>
+                    <option >Crate</option>
+                    <option >Cup</option>
+                    <option >Each</option>
+                    <option >Gram</option>
+                    <option >Gallon</option>
+                    <option >Kg</option>
+                    <option >Kilo</option>
+                    <option >Kobiowu</option>
+                    <option >Kerosene-tin</option>
+                    <option >Mudu</option>
+                    <option >Liter</option>
+                    <option >Paint</option>
+                    <option >Sack</option>
+                 </select>, the available quantity at hand now in related to the inputed Measurement (e.g if you input 200 here and you haved inputed kg in the previous input,that means you have 200kg available) is <input name = "Quantity" class="quantity" id="product-form-input-input" type="number"  min="1" placeholder="e.g 300" required/> and it will be available from  <input class="from" name = "AvailabilityDateFrom" id="product-form-input-input" type="date"  required/> to  <input class="to" name = "AvailabilityDateTo" id="product-form-input-input" type="date" required/></p>
+               </div>
+                
+                
+             </div>
+             <div class="form-bottom"> <input id="btn" class="submit-form" type="submit"> </div>
+             </div>
+             </form>
+    </div>
+    
+   <script src="/Product/editProduct.js"></script>
+</body>
+</html>

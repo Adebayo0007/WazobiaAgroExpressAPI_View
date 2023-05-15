@@ -1,0 +1,68 @@
+*{
+    padding: 0%;
+    margin: 0%;
+    box-sizing: border-box;
+}
+.ago{
+    font-size: larger;
+    font-weight: bold;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: aliceblue;
+  }
+  .like{
+    color: black !important;
+    text-decoration: none;
+  }
+  .like:hover{
+    background-color: green !important;
+    color: white !important;
+  }
+  .partial-sign2{
+    text-decoration: none;
+  }
+  .fabutton {
+    background: none;
+    padding: 0px;
+    border: none;
+  }
+  
+  .toast{
+    background-color: green;
+    font-size: small;
+    font-weight: bolder;
+  }
+  #test.user-body span{
+    font-size: small;
+  }
+  #tt.user-detail div{
+    margin: 3px 0px;
+  }
+  .first,.second,.third{
+    display: flex;
+    justify-content: space-between;
+  }
+  .product-choice{
+    display: flex;
+    flex-direction: row;
+    gap: 1vw;
+  }
+  .product-choice div{
+    display: flex;
+    justify-content: center;
+    padding: .3rem .4rem;
+    border-radius: 10px;
+    width: 30vw;
+    color: aliceblue;
+    font-size: 15px;
+    background-color: green;
+  }
+  .go{
+    font-size: small;
+    background-color: green;
+    outline: none;
+    border: solid green 1px;
+  }
+  
+  
+  
+  

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/Buyer/buyerRegistration.css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,400;0,700;0,900;1,400;1,600;1,900&family=Poppins:ital,wght@0,300;0,500;0,600;0,800;1,300;1,700&family=Rufina:wght@400;700&display=swap"
+        rel="stylesheet">
+    <title>Document</title>
+</head>
+<body>
+    <form id="buyer-form" enctype="multipart/form-data" >
+        <div class="form-container">
+            <div class="form-head"><span class="reg-form">Registration Form</span></div>
+              
+                                <h5 id="err-message" style="color: red; text-align: center;"></h5>
+            
+            <div class="form-body">
+               
+                     <div class="input-wrapper">
+                            <label  style="width: 100%;"></label>           
+                             <input type="file"
+                               id="profilePicture"
+                               accept=".png,.jpg,.jpeg,.gif,.tif"
+                               name="ProfilePicture"
+                               class="form-control"
+                               style="border:0px!important;padding: 0px;padding-top: 10px;padding-bottom: 30px;"
+                               onchange="document.getElementById('profilePicture').src = window.URL.createObjectURL(this.files[0])" required/>
+                        </div><br>
+        
+                <div class="camp"> <span class="form-icon"><i class="fa-solid fa-file-signature fa-beat"></i></span> <span class="form-input">  <input class= "input" name = "FirstName" type="text" placeholder="First name" required/></span> </div><br>
+        
+                <div class="camp"> <span class="form-icon"><i class="fa-solid fa-file-signature fa-beat"></i></span> <span class="form-input">  <input class= "input" name = "LastName" type="text" placeholder="Last name" required/></span> </div><br>
+        
+                <div class="camp"> <span class="form-icon"><i class="fa-solid fa-user fa-beat"></i></span> <span class="form-input">  <input class= "input" name = "UserName"  maxlength="15" type="text" placeholder="User name" required/></span> </div><br>
+        
+                 <div class="camp"> <span class="form-icon"><i class="fa-solid fa-location-dot fa-beat"></i></span> <span class="form-input">  <input class= "input" name = "FullAddress" type="text" placeholder="Full address" required/></span> </div><br>
+   
+                 <div class="camp"> <span class="form-icon"><i class="fa-solid fa-flag-usa fa-beat"></i></span> <span class="form-input">  <select id="state" class= "input" name = "State">
+                   <option value="0" selected disabled>--State--</option>
+                   <option >Lagos</option>
+                 </select></span> </div><br>
+        
+                <div class="camp"> <span class="form-icon"><i class="fa-sharp fa-solid fa-location-pin fa-beat"></i></span> <span class="form-input">  <select id="lga" class= "input" name = "LocalGovernment" >
+                   <option>--LGA--</option>
+                 
+                </select></span> </div><br>
+        
+                <div class="camp"> <span class="form-icon"><i class="fa-solid fa-venus-mars fa-beat"></i></span> <span class="form-input">  <select class= "input" name = "Gender">
+                   <option value="0" selected disabled>--Gender--</option>
+                   <option value="Male">Male</option>
+                   <option value="Female">Female</option>
+                </select></span> </div><br>
+        
+                <div class="camp"> <span class="form-icon"><i class="fa-solid fa-envelope fa-beat"></i></span> <span class="form-input">  <input class= "input" name = "Email" type="email" placeholder="Email" required/></span> </div><br>
+   
+                <div class="camp"> <span class="form-icon"><i class="fa-solid fa-envelope fa-beat"></i></span> <span class="form-input">  <input class= "input" name = "ConfirmEmail" type="email" placeholder="Email" required/></span> </div><br>
+        
+                <div class="camp"> <span class="form-icon"><i class="fa-solid fa-lock fa-beat"></i></span> <span class="form-input">  <input class= "input"  name = "Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" type="password" placeholder="Password(6 character with number and capital letter)" required/></span> </div><br>
+   
+                <div class="camp"> <span class="form-icon"><i class="fa-solid fa-lock fa-beat"></i></span> <span class="form-input">  <input class= "input"  name = "ConfirmPassword" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" type="password" placeholder="Password(6 character with number and capital letter)" required/></span> </div><br>
+        
+                <div class="camp"> <span class="form-icon"><i class="fa-sharp fa-solid fa-phone-volume fa-beat"></i></span> <span class="form-input">  <input class= "input" name = "PhoneNumber" type="text" placeholder="Phone number" required/></span> </div><br>
+            
+            
+         </div>
+         <div class="form-bottom"> <input id="btn" class="submit-form" type="submit"> </div>
+         </div>
+         </form>
+         <script src="/Buyer/address.js"></script>
+         <script src="/Buyer/buyerRegistration.js"></script>
+</body>
+</html>

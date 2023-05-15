@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/Login/login.css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="containerr">
+        <div class="screen">
+            <div class="screen__content">
+                <form asp-action="LogIn" class="login">
+                            <h5 id="overlay" style="color: red;"></h5>   
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="login__field">
+                        <i class="login__icon fas fa-user"></i>
+                        <input id="email" name ="Email" type="email" class="login__input" placeholder="User Email">
+                         <span asp-validation-for="Email" class="text-danger"></span>
+                    </div>
+                    <div class="login__field">
+                        <i class="login__icon fas fa-lock"></i>
+                        <input id="password" type="password" name = "Password" class="login__input" placeholder="Password">
+                         <span asp-validation-for="Password" class="text-danger"></span>
+                    </div>
+                    <button  id="btn" type="submit" class="button login__submit">
+                        <span class="button__text">Log In</span>
+                        <i class="button__icon fas fa-chevron-right"></i>
+                    </button>	
+                    <div>
+                        <br>
+                        <a style= "font-size:15px;color:red; text-decoration:none;font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">forgotten account?</a>
+                    </div>			
+                </form>
+                <!-- <div class="social-login">
+                    <h5>Follow us via</h5>
+                    <div class="social-icons">
+                        <a href="#" class="social-login__icon fab fa-instagram"></a>
+                        <a href="https://www.facebook.com/abdullah.adebayo.1/" class="social-login__icon fab fa-facebook"></a>
+                        <a href="#" class="social-login__icon fab fa-twitter"></a>
+                    </div>
+                </div> -->
+            </div>
+            <div class="screen__background">
+                <span class="screen__background__shape screen__background__shape4"></span>
+                <span class="screen__background__shape screen__background__shape3"></span>		
+                <span class="screen__background__shape screen__background__shape2"></span>
+                <span class="screen__background__shape screen__background__shape1"></span>
+            </div>		
+        </div>
+    </div>
+    <script src="/Login/login.js"></script>
+</body>
+</html>
