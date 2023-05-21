@@ -1,28 +1,25 @@
+'use strict';
+let tableData = document.querySelector('.my-product');
 
-let tableData = document.querySelector(".my-product");
-
-fetch('http://localhost:5000/api/Product/MyProducts',
-{
-    method : 'GET', 
-    headers:{
-        "Authorization" : `Bearer ${localStorage.getItem("setToken")}`
-    },
-    
-}).
-then(promise => promise.json()).
-then(response => {
-    if(response.isSuccess == true)
-    {
-        response.data.forEach(element => {
-            let date = element.availabilityDateFrom.toString();
-            let dateFrom = date.substring(0,10);
-            let date2 = element.availabilityDateTo.toString();
-            let dateTo = date2.substring(0,10);
-            var date3 = new Date;
-            let date5 = Number(date3.getDate());
-            let date6 = Number(element.availabilityDateTo.substring(8,10));
-            let runningDays = date6-date5;
-           tableData.innerHTML += `<div class="bodyyy">
+fetch('https://localhost:7256/api/Product/MyProducts', {
+  method: 'GET',
+  headers: {
+    Authorization: `Bearer ${localStorage.getItem('setToken')}`,
+  },
+})
+  .then((promise) => promise.json())
+  .then((response) => {
+    if (response.isSuccess == true) {
+      response.data.forEach((element) => {
+        let date = element.availabilityDateFrom.toString();
+        let dateFrom = date.substring(0, 10);
+        let date2 = element.availabilityDateTo.toString();
+        let dateTo = date2.substring(0, 10);
+        var date3 = new Date();
+        let date5 = Number(date3.getDate());
+        let date6 = Number(element.availabilityDateTo.substring(8, 10));
+        let runningDays = date6 - date5;
+        tableData.innerHTML += `<div class="bodyyy">
            <div class="content">
             <main>
                 <img id="profilePicture" alt="product" width="300vw" height="190vh" object-fit:cover" src="${element.firstDimentionPicture}">
@@ -44,12 +41,9 @@ then(response => {
            </div>
            <br>
            </div>
-           `
-        })
-        
-        console.log(response)
-    }});
+           `;
+      });
 
- 
-
-   
+      console.log(response);
+    }
+  });

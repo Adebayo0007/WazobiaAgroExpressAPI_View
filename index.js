@@ -1,4 +1,4 @@
-
+'use strict';
 let tableData = document.querySelector(".body");
 
 fetch('http://localhost:5000/api/Home/Index',

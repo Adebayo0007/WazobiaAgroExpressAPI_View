@@ -1,20 +1,24 @@
-let orderedTable = document.querySelector("#ordered");
-let pendingTable = document.querySelector("#pending");
-fetch(`http://localhost:5000/api/RequestedProduct/OrderedProductAndPendingProduct`,{
-    method : 'GET',
-    headers:{
-        "Authorization" : `Bearer ${localStorage.getItem("setToken")}`
-    },   
-}).
-then(promise => {
+'use strict';
+let orderedTable = document.querySelector('#ordered');
+let pendingTable = document.querySelector('#pending');
+fetch(
+  `https://localhost:7256/api/RequestedProduct/OrderedProductAndPendingProduct`,
+  {
+    method: 'GET',
+    headers: {
+      Authorization: `Bearer ${localStorage.getItem('setToken')}`,
+    },
+  }
+)
+  .then((promise) => {
     debugger;
-    return promise.json()}).
-then(response => {
-    console.log("i am in");
+    return promise.json();
+  })
+  .then((response) => {
+    console.log('i am in');
     debugger;
-   if(response.isSuccess == true)
-   {
-       response.data.orderedProduct.forEach(element => {
+    if (response.isSuccess == true) {
+      response.data.orderedProduct.forEach((element) => {
         orderedTable.innerHTML += `<div class="app-user">
         <div style="height:18rem !important" class="user-body">
             <div class="user-detail">
@@ -30,16 +34,14 @@ then(response => {
                          </div>
                 </div>
             </div>
-        </div><hr>`
-       });
+        </div><hr>`;
+      });
 
-       if(response.data.orderedProduct == 0)
-       {
-          orderedTable.innerHTML += `<h2 style = "color:red;">You've not ordered yet</h2>`;
-       }
+      if (response.data.orderedProduct == 0) {
+        orderedTable.innerHTML += `<h2 style = "color:red;">You've not ordered yet</h2>`;
+      }
 
-
-       response.data.pendingProduct.forEach(element => {
+      response.data.pendingProduct.forEach((element) => {
         debugger;
         pendingTable.innerHTML += `<div class="app-user">
         <div style="height:18rem !important" class="user-body">
@@ -57,14 +59,11 @@ then(response => {
                         
                 </div>
             </div>
-        </div><hr>`
-       });
+        </div><hr>`;
+      });
 
-       if(response.data.pendingProduct == 0)
-       {
-          pendingTable.innerHTML += `<h2 style = "color:red;">You have no accepted order</h2>`;
-       }
-
-
-   }
-})
+      if (response.data.pendingProduct == 0) {
+        pendingTable.innerHTML += `<h2 style = "color:red;">You have no accepted order</h2>`;
+      }
+    }
+  });

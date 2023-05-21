@@ -1,26 +1,21 @@
+'use strict';
+let tableData = document.querySelector('.use');
 
-let tableData = document.querySelector(".use");
-
-fetch('http://localhost:5000/api/Buyer/Buyers',
-{
-    method : 'GET', 
-    headers:{
-        "Authorization" : `Bearer ${localStorage.getItem("setToken")}`
-    },
-    
-}).
-then(promise => promise.json()).
-then(response => {
+fetch('https://localhost:7256/api/Buyer/Buyers', {
+  method: 'GET',
+  headers: {
+    Authorization: `Bearer ${localStorage.getItem('setToken')}`,
+  },
+})
+  .then((promise) => promise.json())
+  .then((response) => {
     console.log(response);
-    if(response.isSuccess == true)
-    {
-        tableData.innerHTML += `<h2 style= "margin-left:9vw;">List of active Buyers</h2><hr>`;
-        response.data.activeBuyers.forEach(element => {
-          
-          
-                tableData.innerHTML += `<div class="app-user">
+    if (response.isSuccess == true) {
+      tableData.innerHTML += `<h2 style= "margin-left:9vw;">List of active Buyers</h2><hr>`;
+      response.data.activeBuyers.forEach((element) => {
+        tableData.innerHTML += `<div class="app-user">
                 <div class="user-body">
-                  <div class="user-picture"><img style="width:150px;height:150px; object-fit:cover" src="data:image/*;base64,@(Convert.ToBase64String(@item.ProfilePicture))" alt="user Picture"></div>
+                  <div class="user-picture"><img style="width:150px;height:150px; object-fit:cover"  src="${element.profilePicture}"  alt="user Picture"></div>
                   <div class="user-detail">
                       <div><span class="user-font">Name: </span> <span class="user-font">${element.name}</span></div>
                        <div><span class="user-font">User name: </span> <span class="user-font">${element.userName}</span></div>
@@ -34,16 +29,14 @@ then(response => {
                        <a href= "/Buyer/DeleteBuyerUsingEmail.html?email=${element.email}" class="partial-sign2" style="padding:0.2rem 2.4rem !important;background-color:green; border-radius:15px; color: white !important; font-weight: bolder;text-align: center;" class="nav-link text-dark" id="${element.email}">Delete</a>
                         </div>
                         </div>
-                    </div><hr>`
-        })
+                    </div><hr>`;
+      });
 
-
-        tableData.innerHTML += `<h2 style= "color:red;margin-left:9vw;">List of non active Buyers</h2><hr>`;
-          response.data.nonActiveBuyers.forEach(element => {
-          
-                tableData.innerHTML += `<div class="app-user">
+      tableData.innerHTML += `<h2 style= "color:red;margin-left:9vw;">List of non active Buyers</h2><hr>`;
+      response.data.nonActiveBuyers.forEach((element) => {
+        tableData.innerHTML += `<div class="app-user">
             <div class="user-body">
-              <div class="user-picture"><img style="width:150px;height:150px; object-fit:cover" src="data:image/*;base64,@(Convert.ToBase64String(@item.ProfilePicture))" alt="user Picture"></div>
+              <div class="user-picture"><img style="width:150px;height:150px; object-fit:cover" src="lekan.png" alt="user Picture"></div>
               <div class="user-detail">
               <div><span class="user-font">Name: </span> <span class="user-font">${element.name}</span></div>
               <div><span class="user-font">User name: </span> <span class="user-font">${element.userName}</span></div>
@@ -58,23 +51,15 @@ then(response => {
                       <a href= "/Buyer/DeleteBuyerUsingEmail.html?email=${element.email}" class="partial-sign2" style="padding:0.2rem 2.4rem !important;background-color:green; border-radius:15px; color: white !important; font-weight: bolder;text-align: center;" class="nav-link text-dark" id="${element.email}">Add</a>
                        </div>
                        </div>
-                   </div><hr>`
-        })
+                   </div><hr>`;
+      });
 
+      console.log(response);
+    }
+  });
 
-        
-        console.log(response)
-    }});
-
-
-
-
-
-
-  let submitButton = document.querySelector("#completed-task");
-  let input = document.querySelector(".search-search");
-    submitButton.addEventListener("click", () =>{
-        location.href = `/Buyer/searchBuyer.html?searchInput=${input.value}`;
-    });
-
-   
+let submitButton = document.querySelector('#completed-task');
+let input = document.querySelector('.search-search');
+submitButton.addEventListener('click', () => {
+  location.href = `/Buyer/searchBuyer.html?searchInput=${input.value}`;
+});
