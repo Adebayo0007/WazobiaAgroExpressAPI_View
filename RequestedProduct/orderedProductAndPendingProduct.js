@@ -2,7 +2,7 @@
 let orderedTable = document.querySelector('#ordered');
 let pendingTable = document.querySelector('#pending');
 fetch(
-  `https://localhost:7256/api/RequestedProduct/OrderedProductAndPendingProduct`,
+  `http://localhost:5000/api/RequestedProduct/OrderedProductAndPendingProduct`,
   {
     method: 'GET',
     headers: {
@@ -23,7 +23,7 @@ fetch(
         <div style="height:18rem !important" class="user-body">
             <div class="user-detail">
                 <div><span class="user-font">Product: </span> <span class="user-font">${element.productName}</span></div>
-                 <div><span class="user-font">Email: </span> <span class="user-font">@${element.buyerEmail}</span></div>
+                 <div><span class="user-font">Email: </span> <span class="user-font">${element.buyerEmail}</span></div>
                  <div><span class="user-font">Location: </span> <span class="user-font">${element.buyerLocalGovernment}</span></div>
                   <div><span class="user-font">Farmer name: </span> <span class="user-font">${element.farmerName}</span></div>
                  <div><span class="user-font">Farmer no: </span> <span class="user-font">${element.farmerNumber}</span></div>
@@ -47,14 +47,14 @@ fetch(
         <div style="height:18rem !important" class="user-body">
             <div class="user-detail">
                 <div><span class="user-font">Product: </span> <span class="user-font">${element.productName}</span></div>
-                 <div><span class="user-font">Email: </span> <span class="user-font">@${element.buyerEmail}</span></div>
+                 <div><span class="user-font">Email: </span> <span class="user-font">${element.buyerEmail}</span></div>
                  <div><span class="user-font">Location: </span> <span class="user-font">${element.buyerLocalGovernment}</span></div>
                   <div><span class="user-font">Farmer name: </span> <span class="user-font">${element.farmerName}</span></div>
                  <div><span class="user-font">Farmer no: </span> <span class="user-font">${element.farmerNumber}</span></div>
  
                        <div style=" margin:2vh 0vw;display:flex;justify-content:center;" class="partial-sign">
                         <a class="partial-sign2" style="text-decoration:none;color:white;background-color:green;padding:.5vh 1vw; border-radius:10px; font-size:10px;width:15vw;
-                        text-align: center;" class="nav-link text-dark" href="/RequestedProduct/deleteRequestedProduct.html?requestId=${element.id}">Delivered</a>
+                        text-align: center;" class="nav-link text-dark" href="/RequestedProduct/deliveredRequestedProduct.html?requestId=${element.id}">Delivered</a>
                          </div>
                         
                 </div>

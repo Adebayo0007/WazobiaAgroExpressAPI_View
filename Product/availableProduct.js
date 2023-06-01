@@ -1,6 +1,6 @@
 'use strict';
 let tableData = document.querySelector('#use');
-fetch('https://localhost:7256/api/Product/AvailableProducts', {
+fetch('http://localhost:5000/api/Product/AvailableProducts', {
   method: 'GET',
   headers: {
     Authorization: `Bearer ${localStorage.getItem('setToken')}`,
@@ -16,12 +16,12 @@ fetch('https://localhost:7256/api/Product/AvailableProducts', {
         if (element.farmerRank < 3) {
           tableData.innerHTML += `<div class="bodyyy">
                 <div class="content">
-                    <main>
-                        <img id="profilePicture" alt="product" width="300vw" height="190vh" object-fit:cover" src="${element.firstDimentionPicture}">
-                        <img id="profilePicture" alt="product" width="300vw" height="190vh" object-fit:cover" src="${element.secondDimentionPicture}">
-                        <img id="profilePicture" alt="product" width="300vw" height="190vh" object-fit:cover" src="${element.thirdDimentionPicture}">
-                        <img id="profilePicture" alt="product" width="300vw" height="190vh" object-fit:cover" src="${element.forthDimentionPicture}">
-                    </main><br>
+                <main>
+                <img id="profilePicture" alt="product" width="300vw" height="190vh" object-fit:cover" src="${`http://localhost:5000/products/${element.firstDimentionPicture}`}">
+                <img id="profilePicture" alt="product" width="300vw" height="190vh" object-fit:cover" src="${`http://localhost:5000/products/${element.secondDimentionPicture}`}">
+                <img id="profilePicture" alt="product" width="300vw" height="190vh" object-fit:cover" src="${`http://localhost:5000/products/${element.thirdDimentionPicture}`}">
+                <img id="profilePicture" alt="product" width="300vw" height="190vh" object-fit:cover" src="${`http://localhost:5000/products/${element.forthDimentionPicture}`}">
+                </main><br>
                     <div class="first"> <span class="title">${element.productName}</span><span class="price">₦${element.price}/${element.measurement}</span></div>
                     <div class="second"> <span>Quantity</span><span class="sec">${element.quantity}<span style ="font-size:15px;" class="sec">${element.measurement}(s)</span> </span> </div>
                     <div class="second"> <span>Location</span><span class="sec">${element.productState}/${element.productLocalGovernment}</span> </div>
@@ -46,12 +46,12 @@ fetch('https://localhost:7256/api/Product/AvailableProducts', {
         if (element.farmerRank >= 3 && element.farmerRank <= 6) {
           tableData.innerHTML += `<div class="bodyyy">
                 <div class="content">
-                    <main>
-                        <img id="profilePicture" alt="product" width="300vw" height="190vh" object-fit:cover" src="${element.firstDimentionPicture}">
-                        <img id="profilePicture" alt="product" width="300vw" height="190vh" object-fit:cover" src="${element.secondDimentionPicture}">
-                        <img id="profilePicture" alt="product" width="300vw" height="190vh" object-fit:cover" src="${element.thirdDimentionPicture}">
-                        <img id="profilePicture" alt="product" width="300vw" height="190vh" object-fit:cover" src="${element.forthDimentionPicture}">
-                    </main><br>
+                <main>
+                <img id="profilePicture" alt="product" width="300vw" height="190vh" object-fit:cover" src="${`http://localhost:5000/products/${element.firstDimentionPicture}`}">
+                <img id="profilePicture" alt="product" width="300vw" height="190vh" object-fit:cover" src="${`http://localhost:5000/products/${element.secondDimentionPicture}`}">
+                <img id="profilePicture" alt="product" width="300vw" height="190vh" object-fit:cover" src="${`http://localhost:5000/products/${element.thirdDimentionPicture}`}">
+                <img id="profilePicture" alt="product" width="300vw" height="190vh" object-fit:cover" src="${`http://localhost:5000/products/${element.forthDimentionPicture}`}">
+               </main><br>
                     <div class="first"> <span class="title">${element.productName}</span><span class="price">₦${element.price}/${element.measurement}</span></div>
                     <div class="second"> <span>Quantity</span><span class="sec">${element.quantity}<span style ="font-size:15px;" class="sec">${element.measurement} (s)</span> </span> </div>
                     <div class="second"> <span>Location</span><span class="sec">${element.productState}/${element.productLocalGovernment}</span> </div>
@@ -76,12 +76,12 @@ fetch('https://localhost:7256/api/Product/AvailableProducts', {
         if (element.farmerRank >= 7 && element.farmerRank <= 10) {
           tableData.innerHTML += `<div class="bodyyy">
                 <div class="content">
-                    <main>
-                        <img id="profilePicture" alt="product" width="300vw" height="190vh" object-fit:cover" src="${element.firstDimentionPicture}">
-                        <img id="profilePicture" alt="product" width="300vw" height="190vh" object-fit:cover" src="${element.secondDimentionPicture}">
-                        <img id="profilePicture" alt="product" width="300vw" height="190vh" object-fit:cover" src="${element.thirdDimentionPicture}">
-                        <img id="profilePicture" alt="product" width="300vw" height="190vh" object-fit:cover" src="${element.forthDimentionPicture}">
-                    </main><br>
+                <main>
+                <img id="profilePicture" alt="product" width="300vw" height="190vh" object-fit:cover" src="${`http://localhost:5000/products/${element.firstDimentionPicture}`}">
+                <img id="profilePicture" alt="product" width="300vw" height="190vh" object-fit:cover" src="${`http://localhost:5000/products/${element.secondDimentionPicture}`}">
+                <img id="profilePicture" alt="product" width="300vw" height="190vh" object-fit:cover" src="${`http://localhost:5000/products/${element.thirdDimentionPicture}`}">
+                <img id="profilePicture" alt="product" width="300vw" height="190vh" object-fit:cover" src="${`http://localhost:5000/products/${element.forthDimentionPicture}`}">
+                </main><br>
                     <div class="first"> <span class="title">${element.productName}</span><span class="price">₦${element.price}/${element.measurement}</span></div>
                     <div class="second"> <span>Quantity</span><span class="sec">${element.quantity}<span style ="font-size:15px;" class="sec">${element.measurement} (s)</span> </span> </div>
                     <div class="second"> <span>Location</span><span class="sec">${element.productState}/${element.productLocalGovernment}</span> </div>
@@ -105,12 +105,12 @@ fetch('https://localhost:7256/api/Product/AvailableProducts', {
         if (element.farmerRank >= 11 && element.farmerRank <= 14) {
           tableData.innerHTML += `<div class="bodyyy">
                 <div class="content">
-                    <main>
-                        <img id="profilePicture" alt="product" width="300vw" height="190vh" object-fit:cover" src="${element.firstDimentionPicture}">
-                        <img id="profilePicture" alt="product" width="300vw" height="190vh" object-fit:cover" src="${element.secondDimentionPicture}">
-                        <img id="profilePicture" alt="product" width="300vw" height="190vh" object-fit:cover" src="${element.thirdDimentionPicture}">
-                        <img id="profilePicture" alt="product" width="300vw" height="190vh" object-fit:cover" src="${element.forthDimentionPicture}">
-                    </main><br>
+                <main>
+                <img id="profilePicture" alt="product" width="300vw" height="190vh" object-fit:cover" src="${`http://localhost:5000/products/${element.firstDimentionPicture}`}">
+                <img id="profilePicture" alt="product" width="300vw" height="190vh" object-fit:cover" src="${`http://localhost:5000/products/${element.secondDimentionPicture}`}">
+                <img id="profilePicture" alt="product" width="300vw" height="190vh" object-fit:cover" src="${`http://localhost:5000/products/${element.thirdDimentionPicture}`}">
+                <img id="profilePicture" alt="product" width="300vw" height="190vh" object-fit:cover" src="${`http://localhost:5000/products/${element.forthDimentionPicture}`}">
+               </main><br>
                     <div class="first"> <span class="title">${element.productName}</span><span class="price">₦${element.price}/${element.measurement}</span></div>
                     <div class="second"> <span>Quantity</span><span class="sec">${element.quantity}<span style ="font-size:15px;" class="sec">${element.measurement} (s)</span> </span> </div>
                     <div class="second"> <span>Location</span><span class="sec">${element.productState}/${element.productLocalGovernment}</span> </div>
@@ -136,12 +136,12 @@ fetch('https://localhost:7256/api/Product/AvailableProducts', {
         if (element.farmerRank >= 15 && element.farmerRank <= 18) {
           tableData.innerHTML += `<div class="bodyyy">
                 <div class="content">
-                    <main>
-                        <img id="profilePicture" alt="product" width="300vw" height="190vh" object-fit:cover" src="${element.firstDimentionPicture}">
-                        <img id="profilePicture" alt="product" width="300vw" height="190vh" object-fit:cover" src="${element.secondDimentionPicture}">
-                        <img id="profilePicture" alt="product" width="300vw" height="190vh" object-fit:cover" src="${element.thirdDimentionPicture}">
-                        <img id="profilePicture" alt="product" width="300vw" height="190vh" object-fit:cover" src="${element.forthDimentionPicture}">
-                    </main><br>
+                <main>
+                <img id="profilePicture" alt="product" width="300vw" height="190vh" object-fit:cover" src="${`http://localhost:5000/products/${element.firstDimentionPicture}`}">
+                <img id="profilePicture" alt="product" width="300vw" height="190vh" object-fit:cover" src="${`http://localhost:5000/products/${element.secondDimentionPicture}`}">
+                <img id="profilePicture" alt="product" width="300vw" height="190vh" object-fit:cover" src="${`http://localhost:5000/products/${element.thirdDimentionPicture}`}">
+                <img id="profilePicture" alt="product" width="300vw" height="190vh" object-fit:cover" src="${`http://localhost:5000/products/${element.forthDimentionPicture}`}">
+               </main><br>
                     <div class="first"> <span class="title">${element.productName}</span><span class="price">₦${element.price}/${element.measurement}</span></div>
                     <div class="second"> <span>Quantity</span><span class="sec">${element.quantity}<span style ="font-size:15px;" class="sec">${element.measurement} (s)</span> </span> </div>
                     <div class="second"> <span>Location</span><span class="sec">${element.productState}/${element.productLocalGovernment}</span> </div>
@@ -166,12 +166,12 @@ fetch('https://localhost:7256/api/Product/AvailableProducts', {
         if (element.farmerRank >= 19) {
           tableData.innerHTML += `<div class="bodyyy">
                 <div class="content">
-                    <main>
-                        <img id="profilePicture" alt="product" width="300vw" height="190vh" object-fit:cover" src="${element.firstDimentionPicture}">
-                        <img id="profilePicture" alt="product" width="300vw" height="190vh" object-fit:cover" src="${element.secondDimentionPicture}">
-                        <img id="profilePicture" alt="product" width="300vw" height="190vh" object-fit:cover" src="${element.thirdDimentionPicture}">
-                        <img id="profilePicture" alt="product" width="300vw" height="190vh" object-fit:cover" src="${element.forthDimentionPicture}">
-                    </main><br>
+                <main>
+                <img id="profilePicture" alt="product" width="300vw" height="190vh" object-fit:cover" src="${`http://localhost:5000/products/${element.firstDimentionPicture}`}">
+                <img id="profilePicture" alt="product" width="300vw" height="190vh" object-fit:cover" src="${`http://localhost:5000/products/${element.secondDimentionPicture}`}">
+                <img id="profilePicture" alt="product" width="300vw" height="190vh" object-fit:cover" src="${`http://localhost:5000/products/${element.thirdDimentionPicture}`}">
+                <img id="profilePicture" alt="product" width="300vw" height="190vh" object-fit:cover" src="${`http://localhost:5000/products/${element.forthDimentionPicture}`}">
+               </main><br>
                     <div class="first"> <span class="title">${element.productName}</span><span class="price">₦${element.price}/${element.measurement}</span></div>
                     <div class="second"> <span>Quantity</span><span class="sec">${element.quantity}<span style ="font-size:15px;" class="sec">${element.measurement} (s)</span> </span> </div>
                     <div class="second"> <span>Location</span><span class="sec">${element.productState}/${element.productLocalGovernment}</span> </div>
@@ -206,7 +206,7 @@ fetch('https://localhost:7256/api/Product/AvailableProducts', {
 var search = document.querySelector('.search-search');
 
 let SearchProduct = () => {
-  fetch(`https://localhost:7256/api/Product/SearchProduct/${search.value}`, {
+  fetch(`http://localhost:5000/api/Product/SearchProduct/${search.value}`, {
     method: 'GET',
     headers: {
       Authorization: `Bearer ${localStorage.getItem('setToken')}`,
@@ -223,12 +223,12 @@ let SearchProduct = () => {
             tableData.innerHTML = '';
             tableData.innerHTML += `<div class="bodyyy">
                 <div class="content">
-                    <main>
-                        <img id="profilePicture" alt="product" width="300vw" height="190vh" object-fit:cover" src="${element.firstDimentionPicture}">
-                        <img id="profilePicture" alt="product" width="300vw" height="190vh" object-fit:cover" src="${element.secondDimentionPicture}">
-                        <img id="profilePicture" alt="product" width="300vw" height="190vh" object-fit:cover" src="${element.thirdDimentionPicture}">
-                        <img id="profilePicture" alt="product" width="300vw" height="190vh" object-fit:cover" src="${element.forthDimentionPicture}">
-                    </main><br>
+                <main>
+                <img id="profilePicture" alt="product" width="300vw" height="190vh" object-fit:cover" src="${`http://localhost:5000/products/${element.firstDimentionPicture}`}">
+                <img id="profilePicture" alt="product" width="300vw" height="190vh" object-fit:cover" src="${`http://localhost:5000/products/${element.secondDimentionPicture}`}">
+                <img id="profilePicture" alt="product" width="300vw" height="190vh" object-fit:cover" src="${`http://localhost:5000/products/${element.thirdDimentionPicture}`}">
+                <img id="profilePicture" alt="product" width="300vw" height="190vh" object-fit:cover" src="${`http://localhost:5000/products/${element.forthDimentionPicture}`}">
+                   </main><br>
                     <div class="first"> <span class="title">${element.productName}</span><span class="price">₦${element.price}/${element.measurement}</span></div>
                     <div class="second"> <span>Quantity</span><span class="sec">${element.quantity}<span style ="font-size:15px;" class="sec">${element.measurement}(s)</span> </span> </div>
                     <div class="second"> <span>Location</span><span class="sec">${element.productState}/${element.productLocalGovernment}</span> </div>
@@ -253,12 +253,12 @@ let SearchProduct = () => {
           if (element.FarmerRank >= 3 && element.FarmerRank <= 6) {
             tableData.innerHTML += `<div class="bodyyy">
                 <div class="content">
-                    <main>
-                        <img id="profilePicture" alt="product" width="300vw" height="190vh" object-fit:cover" src="${element.firstDimentionPicture}">
-                        <img id="profilePicture" alt="product" width="300vw" height="190vh" object-fit:cover" src="${element.secondDimentionPicture}">
-                        <img id="profilePicture" alt="product" width="300vw" height="190vh" object-fit:cover" src="${element.thirdDimentionPicture}">
-                        <img id="profilePicture" alt="product" width="300vw" height="190vh" object-fit:cover" src="${element.forthDimentionPicture}">
-                    </main><br>
+                <main>
+                <img id="profilePicture" alt="product" width="300vw" height="190vh" object-fit:cover" src="${`http://localhost:5000/products/${element.firstDimentionPicture}`}">
+                <img id="profilePicture" alt="product" width="300vw" height="190vh" object-fit:cover" src="${`http://localhost:5000/products/${element.secondDimentionPicture}`}">
+                <img id="profilePicture" alt="product" width="300vw" height="190vh" object-fit:cover" src="${`http://localhost:5000/products/${element.thirdDimentionPicture}`}">
+                <img id="profilePicture" alt="product" width="300vw" height="190vh" object-fit:cover" src="${`http://localhost:5000/products/${element.forthDimentionPicture}`}">
+                </main><br>
                     <div class="first"> <span class="title">${element.productName}</span><span class="price">₦${element.price}/${element.measurement}</span></div>
                     <div class="second"> <span>Quantity</span><span class="sec">${element.quantity}<span style ="font-size:15px;" class="sec">${element.measurement} (s)</span> </span> </div>
                     <div class="second"> <span>Location</span><span class="sec">${element.productState}/${element.productLocalGovernment}</span> </div>
@@ -283,12 +283,12 @@ let SearchProduct = () => {
           if (element.FarmerRank >= 7 && element.FarmerRank <= 10) {
             tableData.innerHTML += `<div class="bodyyy">
                 <div class="content">
-                    <main>
-                        <img id="profilePicture" alt="product" width="300vw" height="190vh" object-fit:cover" src="${element.firstDimentionPicture}">
-                        <img id="profilePicture" alt="product" width="300vw" height="190vh" object-fit:cover" src="${element.secondDimentionPicture}">
-                        <img id="profilePicture" alt="product" width="300vw" height="190vh" object-fit:cover" src="${element.thirdDimentionPicture}">
-                        <img id="profilePicture" alt="product" width="300vw" height="190vh" object-fit:cover" src="${element.forthDimentionPicture}">
-                    </main><br>
+                <main>
+                <img id="profilePicture" alt="product" width="300vw" height="190vh" object-fit:cover" src="${`http://localhost:5000/products/${element.firstDimentionPicture}`}">
+                <img id="profilePicture" alt="product" width="300vw" height="190vh" object-fit:cover" src="${`http://localhost:5000/products/${element.secondDimentionPicture}`}">
+                <img id="profilePicture" alt="product" width="300vw" height="190vh" object-fit:cover" src="${`http://localhost:5000/products/${element.thirdDimentionPicture}`}">
+                <img id="profilePicture" alt="product" width="300vw" height="190vh" object-fit:cover" src="${`http://localhost:5000/products/${element.forthDimentionPicture}`}">
+                 </main><br>
                     <div class="first"> <span class="title">${element.productName}</span><span class="price">₦${element.price}/${element.measurement}</span></div>
                     <div class="second"> <span>Quantity</span><span class="sec">${element.quantity}<span style ="font-size:15px;" class="sec">${element.measurement} (s)</span> </span> </div>
                     <div class="second"> <span>Location</span><span class="sec">${element.productState}/${element.productLocalGovernment}</span> </div>
@@ -312,12 +312,12 @@ let SearchProduct = () => {
           if (element.FarmerRank >= 11 && element.FarmerRank <= 14) {
             tableData.innerHTML += `<div class="bodyyy">
                 <div class="content">
-                    <main>
-                        <img id="profilePicture" alt="product" width="300vw" height="190vh" object-fit:cover" src="${element.firstDimentionPicture}">
-                        <img id="profilePicture" alt="product" width="300vw" height="190vh" object-fit:cover" src="${element.secondDimentionPicture}">
-                        <img id="profilePicture" alt="product" width="300vw" height="190vh" object-fit:cover" src="${element.thirdDimentionPicture}">
-                        <img id="profilePicture" alt="product" width="300vw" height="190vh" object-fit:cover" src="${element.forthDimentionPicture}">
-                    </main><br>
+                <main>
+                <img id="profilePicture" alt="product" width="300vw" height="190vh" object-fit:cover" src="${`http://localhost:5000/products/${element.firstDimentionPicture}`}">
+                <img id="profilePicture" alt="product" width="300vw" height="190vh" object-fit:cover" src="${`http://localhost:5000/products/${element.secondDimentionPicture}`}">
+                <img id="profilePicture" alt="product" width="300vw" height="190vh" object-fit:cover" src="${`http://localhost:5000/products/${element.thirdDimentionPicture}`}">
+                <img id="profilePicture" alt="product" width="300vw" height="190vh" object-fit:cover" src="${`http://localhost:5000/products/${element.forthDimentionPicture}`}">
+                </main><br>
                     <div class="first"> <span class="title">${element.productName}</span><span class="price">₦${element.price}/${element.measurement}</span></div>
                     <div class="second"> <span>Quantity</span><span class="sec">${element.quantity}<span style ="font-size:15px;" class="sec">${element.measurement} (s)</span> </span> </div>
                     <div class="second"> <span>Location</span><span class="sec">${element.productState}/${element.productLocalGovernment}</span> </div>
@@ -344,10 +344,10 @@ let SearchProduct = () => {
             tableData.innerHTML += `<div class="bodyyy">
                 <div class="content">
                     <main>
-                        <img id="profilePicture" alt="product" width="300vw" height="190vh" object-fit:cover" src="${element.firstDimentionPicture}">
-                        <img id="profilePicture" alt="product" width="300vw" height="190vh" object-fit:cover" src="${element.secondDimentionPicture}">
-                        <img id="profilePicture" alt="product" width="300vw" height="190vh" object-fit:cover" src="${element.thirdDimentionPicture}">
-                        <img id="profilePicture" alt="product" width="300vw" height="190vh" object-fit:cover" src="${element.forthDimentionPicture}">
+                        <img id="profilePicture" alt="product" width="300vw" height="190vh" object-fit:cover" src="${`http://localhost:5000/products/${element.firstDimentionPicture}`}">
+                        <img id="profilePicture" alt="product" width="300vw" height="190vh" object-fit:cover" src="${`http://localhost:5000/products/${element.secondDimentionPicture}`}">
+                        <img id="profilePicture" alt="product" width="300vw" height="190vh" object-fit:cover" src="${`http://localhost:5000/products/${element.thirdDimentionPicture}`}">
+                        <img id="profilePicture" alt="product" width="300vw" height="190vh" object-fit:cover" src="${`http://localhost:5000/products/${element.forthDimentionPicture}`}">
                     </main><br>
                     <div class="first"> <span class="title">${element.productName}</span><span class="price">₦${element.price}/${element.measurement}</span></div>
                     <div class="second"> <span>Quantity</span><span class="sec">${element.quantity}<span style ="font-size:15px;" class="sec">${element.measurement} (s)</span> </span> </div>
@@ -373,12 +373,12 @@ let SearchProduct = () => {
           if (element.FarmerRank >= 19) {
             tableData.innerHTML += `<div class="bodyyy">
                 <div class="content">
-                    <main>
-                        <img id="profilePicture" alt="product" width="300vw" height="190vh" object-fit:cover" src="${element.firstDimentionPicture}">
-                        <img id="profilePicture" alt="product" width="300vw" height="190vh" object-fit:cover" src="${element.secondDimentionPicture}">
-                        <img id="profilePicture" alt="product" width="300vw" height="190vh" object-fit:cover" src="${element.thirdDimentionPicture}">
-                        <img id="profilePicture" alt="product" width="300vw" height="190vh" object-fit:cover" src="${element.forthDimentionPicture}">
-                    </main><br>
+                <main>
+                <img id="profilePicture" alt="product" width="300vw" height="190vh" object-fit:cover" src="${`http://localhost:5000/products/${element.firstDimentionPicture}`}">
+                <img id="profilePicture" alt="product" width="300vw" height="190vh" object-fit:cover" src="${`http://localhost:5000/products/${element.secondDimentionPicture}`}">
+                <img id="profilePicture" alt="product" width="300vw" height="190vh" object-fit:cover" src="${`http://localhost:5000/products/${element.thirdDimentionPicture}`}">
+                <img id="profilePicture" alt="product" width="300vw" height="190vh" object-fit:cover" src="${`http://localhost:5000/products/${element.forthDimentionPicture}`}">
+                </main><br>
                     <div class="first"> <span class="title">${element.productName}</span><span class="price">₦${element.price}/${element.measurement}</span></div>
                     <div class="second"> <span>Quantity</span><span class="sec">${element.quantity}<span style ="font-size:15px;" class="sec">${element.measurement} (s)</span> </span> </div>
                     <div class="second"> <span>Location</span><span class="sec">${element.productState}/${element.productLocalGovernment}</span> </div>

@@ -15,7 +15,7 @@ fetch('http://localhost:5000/api/Farmer/Farmers', {
       response.data.activeFarmers.forEach((element) => {
         tableData.innerHTML += `<div class="app-user">
                 <div class="user-body">
-                  <div class="user-picture"><img style="width:150px;height:150px; object-fit:cover" src="${element.profilePicture}" alt="user Picture"></div>
+                  <div class="user-picture"><img style="width:150px;height:150px; object-fit:cover" src="${`http://localhost:5000/Images/${element.profilePicture}`}" alt="user Picture"></div>
                   <div class="user-detail">
                       <div><span class="user-font">Name: </span> <span class="user-font">${element.name}</span></div>
                        <div><span class="user-font">User name: </span> <span class="user-font">${element.userName}</span></div>
@@ -36,7 +36,7 @@ fetch('http://localhost:5000/api/Farmer/Farmers', {
       response.data.nonActiveFarmers.forEach((element) => {
         tableData.innerHTML += `<div class="app-user">
             <div class="user-body">
-              <div class="user-picture"><img style="width:150px;height:150px; object-fit:cover" src="${element.profilePicture}" alt="user Picture"></div>
+              <div class="user-picture"><img style="width:150px;height:150px; object-fit:cover" src="${`http://localhost:5000/Images/${element.profilePicture}`}" alt="user Picture"></div>
               <div class="user-detail">
               <div><span class="user-font">Name: </span> <span class="user-font">${element.name}</span></div>
               <div><span class="user-font">User name: </span> <span class="user-font">${element.userName}</span></div>

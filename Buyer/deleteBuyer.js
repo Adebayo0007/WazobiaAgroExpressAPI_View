@@ -41,7 +41,7 @@ let Submit = () => {
   let sendForm = new FormData(myForm);
   console.log(sendForm);
 
-  fetch(`https://localhost:7256/api/User/DeleteUser/${userId.value}`, {
+  fetch(`http://localhost:5000/api/User/DeleteUser/${userId.value}`, {
     method: 'PATCH',
     body: sendForm,
   }).then((response) => {

@@ -10,7 +10,7 @@ let Submit = () => {
   if (input.value == '' || input.value == undefined) {
     input.value = inputFromRoute;
   }
-  fetch(`https://localhost:7256/api/User/SearchUser/${input.value}`)
+  fetch(`http://localhost:5000/api/User/SearchUser/${input.value}`)
     .then((promise) => promise.json())
     .then((response) => {
       debugger;
@@ -20,7 +20,7 @@ let Submit = () => {
         response.data.forEach((element) => {
           if (element.isActive == true) {
             tableData.innerHTML += `<div class="user-body">
-              <div class="user-picture"><img style="width:150px;height:150px; object-fit:cover" src="data:image/*;base64,@(Convert.ToBase64String(@item.ProfilePicture))" alt="user Picture"></div>
+              <div class="user-picture"><img style="width:150px;height:150px; object-fit:cover" src="${`http://localhost:5000/Images/${element.profilePicture}`}" alt="user Picture"></div>
               <div class="user-detail">
                   <div><span class="user-font">Name: </span> <span class="user-font">${element.name}</span></div>
                    <div><span class="user-font">User name: </span> <span class="user-font">${element.userName}</span></div>
@@ -37,7 +37,7 @@ let Submit = () => {
                    </div><hr>`;
           } else {
             tableData.innerHTML += `<div class="user-body">
-          <div class="user-picture"><img style="width:150px;height:150px; object-fit:cover" src="data:image/*;base64,@(Convert.ToBase64String(@item.ProfilePicture))" alt="user Picture"></div>
+          <div class="user-picture"><img style="width:150px;height:150px; object-fit:cover" src="${`http://localhost:5000/Images/${element.profilePicture}`}" alt="user Picture"></div>
           <div class="user-detail">
               <div><span class="user-font">Name: </span> <span class="user-font">${element.name}</span></div>
                <div><span class="user-font">User name: </span> <span class="user-font">${element.userName}</span></div>

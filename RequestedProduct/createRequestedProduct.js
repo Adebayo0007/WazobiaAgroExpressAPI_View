@@ -4,8 +4,10 @@ var productName = document.querySelector('.productName');
 var price = document.querySelector('.price');
 var measurement = document.querySelector('.measurement');
 var quantity = document.querySelector('.quantity');
+var form = document.querySelector('#requested-product');
+var error = document.querySelector('#err-message');
 
-fetch(`https://localhost:7256/api/Product/GetProductById/${requestId}`)
+fetch(`http://localhost:5000/api/Product/GetProductById/${requestId}`)
   .then((promise) => promise.json())
   .then((response) => {
     console.log(response);
@@ -29,7 +31,7 @@ let Submit = () => {
   console.log(sendForm);
 
   fetch(
-    `https://localhost:7256/api/RequestedProduct/CreateRequestedProduct/${requestId}`,
+    `http://localhost:5000/api/RequestedProduct/CreateRequestedProduct/${requestId}`,
     {
       method: 'POST',
       body: sendForm,
@@ -37,11 +39,20 @@ let Submit = () => {
         Authorization: `Bearer ${localStorage.getItem('setToken')}`,
       },
     }
-  ).then((response) => {
-    debugger;
-    console.log('1');
-    response.json();
-    document.location.href = '/Product/availableProduct.html';
-  });
+  )
+    .then((response) => {
+      debugger;
+      if (response.ok != true && response.status != 500)
+      {
+        location.href = 'http://127.0.0.1:5501/Payment/payment.html';
+      }
+      if (response.status == 500) error.textContent = 'internal server error';
+      if(response.status == 200) location.href = '/Product/availableProduct.html';
+      response.json();
+    })
+    // .then((data) => {
+    //   location.href = 'http://127.0.0.1:5501/Payment/payment.html';
+    // })
+    // .catch((err) => alert(JSON.parse(err.message)));
 };
 button.addEventListener('click', Submit);

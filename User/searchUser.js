@@ -8,7 +8,7 @@ let input = document.querySelector('.search-search');
 let Submit = () => {
   console.log(input.value);
   input.value = inputFromRoute;
-  fetch(`https://localhost:7256/api/User/SearchUser/${input.value}`)
+  fetch(`http://localhost:5000/api/User/SearchUser/${input.value}`)
     .then((promise) => promise.json())
     .then((response) => {
       debugger;

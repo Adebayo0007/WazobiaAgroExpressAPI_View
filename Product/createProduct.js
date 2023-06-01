@@ -12,7 +12,7 @@ let Submit = () => {
   let sendForm = new FormData(myForm);
   console.log(sendForm);
 
-  fetch('https://localhost:7256/api/Product/CreateProduct', {
+  fetch('http://localhost:5000/api/Product/CreateProduct', {
     method: 'POST',
     body: sendForm,
     headers: {
@@ -38,7 +38,7 @@ let Submit = () => {
       }
     })
     .catch((resp) => {
-      window.alert('An error occured pls check your inputs!');
+      window.alert('An error occure check you input and the accepted picture must not be more than 20KB!');
     });
 };
 myForm.addEventListener('submit', Submit);

@@ -7,7 +7,7 @@ var quantity = document.querySelector('.quantity');
 var from = document.querySelector('.from');
 var to = document.querySelector('.to');
 
-fetch(`https://localhost:7256/api/Product/GetProductById/${id}`)
+fetch(`http://localhost:5000/api/Product/GetProductById/${id}`)
   .then((promise) => promise.json())
   .then((response) => {
     console.log(response);
@@ -35,7 +35,7 @@ let Submit = () => {
   let sendForm = new FormData(myForm);
   console.log(sendForm);
 
-  fetch(`https://localhost:7256/api/Product/UpdateProduct/${id}`, {
+  fetch(`http://localhost:5000/api/Product/UpdateProduct/${id}`, {
     method: 'PATCH',
     body: sendForm,
   }).then((response) => {

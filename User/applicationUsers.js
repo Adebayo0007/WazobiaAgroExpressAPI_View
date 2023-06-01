@@ -1,7 +1,7 @@
 'use strict';
 let tableData = document.querySelector('.use');
 
-fetch('https://localhost:7256/api/User/ApplicationUsers', {
+fetch('http://localhost:5000/api/User/ApplicationUsers', {
   method: 'GET',
   headers: {
     Authorization: `Bearer ${localStorage.getItem('setToken')}`,
@@ -13,7 +13,7 @@ fetch('https://localhost:7256/api/User/ApplicationUsers', {
       response.data.forEach((element) => {
         if (element.isActive == true) {
           tableData.innerHTML += `<div class="user-body">
-                <div class="user-picture"><img style="width:150px;height:150px; object-fit:cover" src="${element.profilePicture}" alt="user Picture"></div>
+                <div class="user-picture"><img style="width:150px;height:150px; object-fit:cover" src="${`http://localhost:5000/Images/${element.profilePicture}`}" alt="user Picture"></div>
                 <div class="user-detail">
                     <div><span class="user-font">Name: </span> <span class="user-font">${element.name}</span></div>
                      <div><span class="user-font">User name: </span> <span class="user-font">${element.userName}</span></div>
@@ -30,7 +30,7 @@ fetch('https://localhost:7256/api/User/ApplicationUsers', {
                      </div><hr>`;
         } else if (element.isActive == false) {
           tableData.innerHTML += `<div class="user-body">
-            <div class="user-picture"><img style="width:150px;height:150px; object-fit:cover" src="data:image/*;base64,@(Convert.ToBase64String(@item.ProfilePicture))" alt="user Picture"></div>
+            <div class="user-picture"><img style="width:150px;height:150px; object-fit:cover" src="${`http://localhost:5000/Images/${element.profilePicture}`}" alt="user Picture"></div>
             <div class="user-detail">
                 <div><span class="user-font">Name: </span> <span class="user-font">${element.name}</span></div>
                  <div><span class="user-font">User name: </span> <span class="user-font">${element.userName}</span></div>
@@ -53,17 +53,7 @@ fetch('https://localhost:7256/api/User/ApplicationUsers', {
     }
   });
 
-function convertFileToBase64(file) {
-  return new Promise((resolve, reject) => {
-    const reader = new FileReader();
-    reader.onload = () => {
-      const base64String = reader.result.split(',')[1];
-      resolve(base64String);
-    };
-    reader.onerror = reject;
-    reader.readAsDataURL(file);
-  });
-}
+
 
 let submitButton = document.querySelector('#completed-task');
 let input = document.querySelector('.search-search');

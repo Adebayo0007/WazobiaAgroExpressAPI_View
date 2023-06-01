@@ -12,7 +12,7 @@ let Submit = () => {
   let sendForm = new FormData(myForm);
   console.log(sendForm);
 
-  fetch('https://localhost:7256/api/Buyer/CreateBuyer', {
+  fetch('http://localhost:5000/api/Buyer/CreateBuyer', {
     method: 'POST',
     body: sendForm,
   })

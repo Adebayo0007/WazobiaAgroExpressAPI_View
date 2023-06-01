@@ -15,7 +15,7 @@ let Submit = (e) => {
     '#btn'
   ).innerHTML = `<div class="loading add-loading"></div>`;
   //  console.log(Data.Email);
-  fetch('https://localhost:7256/api/User/Login', {
+  fetch('http://localhost:5000/api/User/Login', {
     method: 'Post',
     headers: {
       'Content-Type': 'application/json',
@@ -47,6 +47,7 @@ let Submit = (e) => {
           );
         } else if (response.data.role == 'Buyer') {
           console.log('you are a buyer you should e redirected to buyer index');
+          location.href = '/Buyer/buyerDashboard.html';
         } else {
           console.log('you are not recognize as the application user');
         }

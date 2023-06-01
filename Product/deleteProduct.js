@@ -8,7 +8,7 @@ var dateFrom = document.getElementById('dateFrom');
 var dateTo = document.getElementById('dateTo');
 
 // console.log(email)
-fetch(`https://localhost:7256/api/Product/GetProductById/${id}`)
+fetch(`http://localhost:5000/api/Product/GetProductById/${id}`)
   .then((promise) => promise.json())
   .then((response) => {
     console.log(response);
@@ -32,7 +32,7 @@ fetch(`https://localhost:7256/api/Product/GetProductById/${id}`)
 let myrequest = document.querySelector('.submit-form');
 
 let Submit = () => {
-  fetch(`https://localhost:7256/api/Product/DeleteProduct/${id}`, {
+  fetch(`http://localhost:5000/api/Product/DeleteProduct/${id}`, {
     method: 'DELETE',
   }).then((response) => {
     response.json();

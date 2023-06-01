@@ -1,7 +1,7 @@
 'use strict';
 let tableData = document.querySelector('.use');
 
-fetch('https://localhost:7256/api/User/PendingRegistration')
+fetch('http://localhost:5000/api/User/PendingRegistration')
   .then((promise) => promise.json())
   .then((response) => {
     console.log(response);
@@ -10,7 +10,7 @@ fetch('https://localhost:7256/api/User/PendingRegistration')
       response.data.forEach((element) => {
         tableData.innerHTML += `<div class="app-user">
                 <div class="user-body">
-                  <div class="user-picture"><img style="width:150px;height:150px; object-fit:cover" src="data:image/*;base64,@(Convert.ToBase64String(@item.ProfilePicture))" alt="user Picture"></div>
+                  <div class="user-picture"><img style="width:150px;height:150px; object-fit:cover" src="${`http://localhost:5000/Images/${element.profilePicture}`}" alt="user Picture"></div>
                   <div class="user-detail">
                       <div><span class="user-font">Name: </span> <span class="user-font">${element.name}</span></div>
                        <div><span class="user-font">User name: </span> <span class="user-font">${element.userName}</span></div>

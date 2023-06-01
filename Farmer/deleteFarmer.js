@@ -10,7 +10,7 @@ var number =  document.getElementById("phoneNumber");
 var userId =  document.getElementById("userId");
 
 console.log(email)
-fetch(`https://localhost:7256/api/User/GetUserByEmail/${email}`).
+fetch(`http://localhost:5000/api/User/GetUserByEmail/${email}`).
 then(promise => promise.json()).
 then(response => {console.log((response));
     if(response.isSuccess == true)
@@ -45,7 +45,7 @@ let myForm = document.querySelector("#delete-user");
        let sendForm = new FormData(myForm);
        console.log(sendForm);
 
-        fetch(`https://localhost:7256/api/User/DeleteUser/${userId.value}`,
+        fetch(`http://localhost:5000/api/User/DeleteUser/${userId.value}`,
         {
             method : 'PATCH',
             body : sendForm

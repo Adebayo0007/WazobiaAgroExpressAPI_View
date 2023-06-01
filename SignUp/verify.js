@@ -8,7 +8,7 @@ myForm.addEventListener('submit', (e) => {
 let Submit = () => {
   let sendForm = new FormData(myForm);
 
-  fetch(`https://localhost:7256/api/User/VerifyUser/${userEmail}`, {
+  fetch(`http://localhost:5000/api/User/VerifyUser/${userEmail}`, {
     method: 'PATCH',
     body: sendForm,
   }).then((response) => {

@@ -1,7 +1,7 @@
 'use strict';
 let tableData = document.querySelector('.my-product');
 
-fetch('https://localhost:7256/api/Product/MyProducts', {
+fetch('http://localhost:5000/api/Product/MyProducts', {
   method: 'GET',
   headers: {
     Authorization: `Bearer ${localStorage.getItem('setToken')}`,
@@ -19,13 +19,14 @@ fetch('https://localhost:7256/api/Product/MyProducts', {
         let date5 = Number(date3.getDate());
         let date6 = Number(element.availabilityDateTo.substring(8, 10));
         let runningDays = date6 - date5;
-        tableData.innerHTML += `<div class="bodyyy">
+        tableData.innerHTML += `
+        <div class="bodyyy">
            <div class="content">
             <main>
-                <img id="profilePicture" alt="product" width="300vw" height="190vh" object-fit:cover" src="${element.firstDimentionPicture}">
-                <img id="profilePicture" alt="product" width="300vw" height="190vh" object-fit:cover" src="${element.secondDimentionPicture}">
-                <img id="profilePicture" alt="product" width="300vw" height="190vh" object-fit:cover" src="${element.thirdDimentionPicture}">
-                <img id="profilePicture" alt="product" width="300vw" height="190vh" object-fit:cover" src="${element.forthDimentionPicture}">
+                <img id="profilePicture" alt="product" width="300vw" height="190vh" object-fit:cover" src="${`http://localhost:5000/products/${element.firstDimentionPicture}`}">
+                <img id="profilePicture" alt="product" width="305vw" height="190vh" object-fit:cover" src="${`http://localhost:5000/products/${element.secondDimentionPicture}`}">
+                <img id="profilePicture" alt="product" width="305vw" height="190vh" object-fit:cover" src="${`http://localhost:5000/products/${element.thirdDimentionPicture}`}">
+                <img id="profilePicture" alt="product" width="305vw" height="190vh" object-fit:cover" src="${`http://localhost:5000/products/${element.forthDimentionPicture}`}">
             </main><br>
             <div class="first"> <span class="title">${element.productName}</span><span class="price">₦${element.price}/${element.measurement}</span> </div>
             <div class="second"> <span>Quantity</span><span class="sec">${element.quantity}<span class="sec"> ${element.measurement} (s)</span> </span> </div>
@@ -35,9 +36,9 @@ fetch('https://localhost:7256/api/Product/MyProducts', {
              <div class="third"> <span>Running days ahead</span><span class="date">${runningDays}</span> </div>
            
             <div class="profile-opt">
-                                                                    <span class="profile-update"><a class="link" href="/Product/editProduct.html?productId=${element.id}"><span class="profile-update">Edit</span></a></span>
-                                                                     <span class="back-to-profile"><a class="link" href="/Product/deleteProduct.html?productId=${element.id}"><span class="profile-update">Delete</span></a></span>
-                                                                </div>
+            <span class="profile-update"><a class="link" href="/Product/editProduct.html?productId=${element.id}"><span class="profile-update">Edit</span></a></span>
+             <span class="back-to-profile"><a class="link" href="/Product/deleteProduct.html?productId=${element.id}"><span class="profile-update">Delete</span></a></span>
+           </div>                                                
            </div>
            <br>
            </div>

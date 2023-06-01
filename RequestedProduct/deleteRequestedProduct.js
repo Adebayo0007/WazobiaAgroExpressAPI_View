@@ -2,12 +2,13 @@
 var requestId = window.location.href.split('=')[1];
 var productName = document.getElementById('productName');
 var price = document.getElementById('price');
+var button = document.querySelector('.submit-form')
 
 // console.log(email)
 
 console.log(requestId);
 fetch(
-  `https://localhost:7256/api/RequestedProduct/GetRequestedProductById/${requestId}`,
+  `http://localhost:5000/api/RequestedProduct/GetRequestedProductById/${requestId}`,
   {
     method: 'GET',
   }
@@ -23,3 +24,13 @@ fetch(
       document.getElementById('msg').textContent = response.message;
     }
   });
+
+  button.addEventListener('click', function(){
+    fetch(
+      `http://localhost:5000/api/RequestedProduct/DeleteRequest/${requestId}`,
+      {
+        method: 'DELETE',
+      }
+    )
+      .then((promise) =>  {location.href = '/RequestedProduct/orderedProductAndPendingProduct.html'})
+  })
