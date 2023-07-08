@@ -22,7 +22,7 @@ let Submit = (e) => {
     },
     body: JSON.stringify(Data),
   })
-    .then((pro) => pro.json())
+  .then((pro) => pro.json())
     .then(function (response) {
       console.log('Sucessful');
       localStorage.setItem('setToken', response.token);
